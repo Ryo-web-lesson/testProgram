@@ -23,7 +23,7 @@ class Cart extends Model
     {
         
         $user_id = Auth::id();
-        $cart_add_info = Cart::firstOrCreate(['product_id' => $product_id,'customer_id' => $user_id,'imgpath' => $imgpath]);
+        $cart_add_info = Cart::firstOrCreate(['product_id' => $product_id,'customer_id' => $user_id]);
 
         if($cart_add_info->wasRecentlyCreated){
             $message = 'カートに追加しました';
